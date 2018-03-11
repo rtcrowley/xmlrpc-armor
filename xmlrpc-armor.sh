@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#Any IP with gt 99 xmplrpc requests within the current access_log.
+#Any IP with gt 99 xmlrpc requests within the current access_log.
 #Verify Apache access log path..
 num=$(cat /var/log/httpd/access_log |grep "POST /xmlrpc.php" |cut -d' ' -f1 |uniq -c |sort |sort -n |rev |cut -d ' ' -f1-2 \
 |rev |awk '$1>99' |awk '{print $2}' |sort |uniq)
