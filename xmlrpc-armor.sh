@@ -16,7 +16,7 @@ echo "$ips" >> /secure/iptab.log
 echo "$num" >> /secure/new.log
 
 #Grep differences between the two
-addit=$(grep -vFx -f /secure/iptab.log /home/new.log)
+addit=$(grep -vFx -f /secure/iptab.log /secure/new.log)
 
 #Drop new ip's found.
 for i in $addit; do
